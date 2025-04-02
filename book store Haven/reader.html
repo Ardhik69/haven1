@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read E-Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .content {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .back-btn {
+            margin-top: 20px;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="book-title">E-Book Title</h1>
+        <p class="content" id="book-content">Loading content...</p>
+        <button class="back-btn" onclick="goBack()">Back to Browse</button>
+    </div>
+
+    <script>
+        const books = {
+            "1": { title: "The Secret Code", content: "This book reveals the secrets of hidden messages in the world of encryption..." },
+            "2": { title: "Journey to Mars", content: "A thrilling adventure of astronauts discovering mysteries on the Red Planet..." },
+            "3": { title: "The Hidden Truth", content: "Dive into the hidden realities that shape our world and minds..." },
+            "4": { title: "Mystery of the Ocean", content: "Unravel the deep-sea secrets that scientists are just beginning to understand..." },
+            "5": { title: "Space Adventures", content: "Explore the farthest reaches of space and the incredible discoveries awaiting us..." },
+            "6": { title: "Artificial Intelligence", content: "An in-depth look at how AI is changing our world and the future of humanity..." },
+            "7": { title: "The Last Kingdom", content: "A story of war, betrayal, and survival in an ancient kingdom..." },
+            "8": { title: "The Science Behind Magic", content: "Learn how magic tricks are based on real scientific principles..." },
+            "9": { title: "The Time Machine", content: "A gripping novel about time travel and its consequences on the world..." }
+        };
+
+        function loadBook() {
+            const params = new URLSearchParams(window.location.search);
+            const bookId = params.get("book");
+
+            if (books[bookId]) {
+                document.getElementById("book-title").textContent = books[bookId].title;
+                document.getElementById("book-content").textContent = books[bookId].content;
+            } else {
+                document.getElementById("book-title").textContent = "Book Not Found";
+                document.getElementById("book-content").textContent = "The book you are looking for does not exist.";
+            }
+        }
+
+        function goBack() {
+            window.location.href = "browse.html";
+        }
+
+        window.onload = loadBook;
+    </script>
+
+</body>
+</html>

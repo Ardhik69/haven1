@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse E-Books</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }header {
+            color: rgb(0, 0, 0);
+            padding: 2px 10px;
+            text-align: center;
+            
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .book {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .book:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 30%;
+            height: 70px;
+            border-radius: 5px;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>E-Books</h1>
+    
+    <div class="grid-container">
+        <div class="book" onclick="openBook('1')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 1">
+            <div class="title">The Secret Code</div>
+        </div>
+        <div class="book" onclick="openBook('2')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 2">
+            <div class="title">Journey to Mars</div>
+        </div>
+        <div class="book" onclick="openBook('3')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 3">
+            <div class="title">The Hidden Truth</div>
+        </div>
+        <div class="book" onclick="openBook('4')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 4">
+            <div class="title">Mystery of the Ocean</div>
+        </div>
+        <div class="book" onclick="openBook('5')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 5">
+            <div class="title">Space Adventures</div>
+        </div>
+        <div class="book" onclick="openBook('6')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 6">
+            <div class="title">Artificial Intelligence</div>
+        </div>
+        <div class="book" onclick="openBook('7')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 7">
+            <div class="title">The Last Kingdom</div>
+        </div>
+        <div class="book" onclick="openBook('8')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 8">
+            <div class="title">The Science Behind Magic</div>
+        </div>
+        <div class="book" onclick="openBook('9')">
+            <img src="https://cdn-icons-png.flaticon.com/128/10433/10433048.png" alt="Book 9">
+            <div class="title">The Time Machine</div>
+        </div>
+    </div>
+
+    <script>
+        function openBook(bookId) {
+            window.location.href = "reader.html?book=" + bookId;
+        }
+    </script>
+
+</body>
+</html>
